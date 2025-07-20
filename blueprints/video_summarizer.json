@@ -1,0 +1,111 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "A structured analysis of a technical videos or recorded meetings",
+    "class": "technical_video_analysis",
+    "type": "object",
+    "definitions": {
+        "Topic": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "inferenceType": "explicit",
+                    "instruction": "Title of the distinct discussion or topic"
+                },
+                "summary": {
+                    "type": "string",
+                    "inferenceType": "explicit",
+                    "instruction": "Short summary of the topic"
+                }
+            }
+        },
+        "VisualExtraction": {
+            "type": "object",
+            "properties": {
+                "timestamp": {
+                    "type": "number",
+                    "inferenceType": "explicit",
+                    "instruction": "Timestamp of the frame"
+                },
+                "description": {
+                    "type": "string",
+                    "inferenceType": "explicit",
+                    "instruction": "Describe the visual"
+                },
+                "summary": {
+                    "type": "string",
+                    "inferenceType": "explicit",
+                    "instruction": "Summarize what it represents or explains"
+                },
+                "image": {
+                    "type": "string",
+                    "inferenceType": "explicit",
+                    "instruction": "Extract the image/diagram"
+                },
+                "link": {
+                    "type": "string",
+                    "inferenceType": "explicit",
+                    "instruction": "Include a link or reference"
+                }
+            }
+        },
+        "Sentiment": {
+            "type": "object",
+            "properties": {
+                "rating": {
+                    "enum": [
+                        "Positive",
+                        "Neutral",
+                        "Negative"
+                    ],
+                    "instruction": "Rate sentiment",
+                    "inferenceType": "explicit"
+                },
+                "explanation": {
+                    "type": "string",
+                    "inferenceType": "explicit",
+                    "instruction": "Explain based on voice tone and pace, word choice, and emotional cues or enthusiasm"
+                }
+            }
+        }
+    },
+    "properties": {
+        "Transcript": {
+            "type": "string",
+            "inferenceType": "explicit",
+            "instruction": "Provide a full, accurate transcript of the spoken content",
+            "granularity": [
+                "video"
+            ]
+        },
+        "Video Summary": {
+            "type": "string",
+            "inferenceType": "inferred",
+            "instruction": "Main topic of the video, key technical concepts or demonstrations, tools, technologies, or frameworks discussed, and a summary under 500 words",
+            "granularity": [
+                "video"
+            ]
+        },
+        "Topic Categorization": {
+            "$ref": "#/definitions/Topic",
+            "instruction": "Identify each distinct discussion or topic, title each topic, and provide a short summary for each",
+            "granularity": [
+                "video"
+            ]
+        },
+        "Image & Diagram Extraction": {
+            "$ref": "#/definitions/VisualExtraction",
+            "instruction": "Timestamp of the frame, describe the visual, summarize what it represents or explains, extract the image/diagram, and include a link or reference",
+            "granularity": [
+                "chapter"
+            ]
+        },
+        "Sentiment Analysis": {
+            "$ref": "#/definitions/Sentiment",
+            "instruction": "Rate sentiment: Positive / Neutral / Negative, explain based on voice tone and pace, word choice, and emotional cues or enthusiasm",
+            "granularity": [
+                "video"
+            ]
+        }
+    }
+} 

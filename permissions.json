@@ -1,0 +1,47 @@
+[
+    {
+        "Sid": "BDACreatePermissions",
+        "Effect": "Allow",
+        "Action": [
+            "bedrock:CreateDataAutomationProject",
+            "bedrock:CreateBlueprint"
+        ],
+        "Resource": "*"
+    },
+    {
+        "Sid": "BDAOProjectsPermissions",
+        "Effect": "Allow",
+        "Action": [
+            "bedrock:CreateDataAutomationProject",
+            "bedrock:UpdateDataAutomationProject",
+            "bedrock:GetDataAutomationProject",
+            "bedrock:GetDataAutomationStatus",
+            "bedrock:ListDataAutomationProjects",
+            "bedrock:InvokeDataAutomationAsync"
+        ],
+        "Resource": "arn:aws:bedrock:::data-automation-project/*"
+    },
+    {
+        "Sid": "BDABlueprintPermissions",
+        "Effect": "Allow",
+        "Action": [
+            "bedrock:GetBlueprint",
+            "bedrock:ListBlueprints",
+            "bedrock:UpdateBlueprint",
+            "bedrock:DeleteBlueprint"
+        ],
+        "Resource": "arn:aws:bedrock:::blueprint/*"
+    },
+
+      
+    {
+     "Sid": "BDACrossRegionInference",
+     "Effect": "Allow",
+     "Action": ["bedrock:InvokeDataAutomationAsync"],
+     "Resource": [
+      "arn:aws:bedrock:us-east-1:account_id:data-automation-profile/us.data-automation-v1",
+      "arn:aws:bedrock:us-east-2:account_id:data-automation-profile/us.data-automation-v1",
+      "arn:aws:bedrock:us-west-1:account_id:data-automation-profile/us.data-automation-v1",
+      "arn:aws:bedrock:us-west-2:account_id:data-automation-profile/us.data-automation-v1"]
+    }
+]
