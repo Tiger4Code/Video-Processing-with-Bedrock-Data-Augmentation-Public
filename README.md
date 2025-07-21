@@ -7,8 +7,6 @@ First, I spun up a JupyterLab environment in Amazon SageMaker Studio. Make sure 
 > The permissions provided in `permissions.json` are generic examples. **Do not use `*` as the resource in production.**
 > Always customize the policy to specify the exact AWS resources you intend to use for improved security and least-privilege access.
 
-This folder contains Jupyter notebooks for demonstrating video processing and summarization using Amazon Bedrock Data Automation (BDA).
-
 ## 📁 Files Overview
 
 ### `main.ipynb`
