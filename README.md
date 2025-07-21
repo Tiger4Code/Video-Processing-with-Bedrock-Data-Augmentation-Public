@@ -1,7 +1,7 @@
 # Video Summarization with Bedrock Data Automation - Notebook
 
 ## 1. Environment Setup
-First, I spun up a JupyterLab environment in Amazon SageMaker Studio. Make sure to attach the correct IAM permissions — refer to the GitHub repository linked with this video for the required IAM policy (SAM policy) you need to attach. See [`permissions.json`](./permissions.json) in this folder for the exact IAM policy required.
+First, I spun up a JupyterLab environment in Amazon SageMaker Studio. Make sure to attach the correct IAM [`permissions.json`](./permissions.json).
 
 > **Note:**
 > The permissions provided in `permissions.json` are generic examples. **Do not use `*` as the resource in production.**
@@ -11,10 +11,10 @@ This folder contains Jupyter notebooks for demonstrating video processing and su
 
 ## 📁 Files Overview
 
-### `MAIN-noor-single-custom-blueprint.ipynb`
+### `main.ipynb`
 This is the main notebook that demonstrates end-to-end video processing using custom blueprints with Amazon Bedrock Data Automation.
 
-## 🎯 What `MAIN-noor-single-custom-blueprint.ipynb` Does
+## 🎯 What `main.ipynb` Does
 
 ### **Overview**
 This notebook demonstrates how to use Amazon Bedrock Data Automation (BDA) to process video files and extract structured insights using custom blueprints. It shows the complete workflow from blueprint creation to video analysis and result extraction.
