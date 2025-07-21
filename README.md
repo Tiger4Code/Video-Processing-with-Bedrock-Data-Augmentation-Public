@@ -20,7 +20,7 @@ This notebook demonstrates how to use Amazon Bedrock Data Automation (BDA) to pr
 ### **Key Features**
 
 #### 1. **Custom Blueprint Creation**
-- Creates a custom video processing blueprint (`video-summarizer-standard-custom`)
+- Creates a custom video processing blueprint (`blueprints/video-summarizer.json`)
 - Uses a JSON schema that defines fields for:
   - **Visual Analysis**: Image & diagram extraction with timestamps
   - **Sentiment Analysis**: Rating and explanation based on voice tone and content
@@ -29,9 +29,9 @@ This notebook demonstrates how to use Amazon Bedrock Data Automation (BDA) to pr
   - **Video Summary**: Comprehensive summary with technical concepts
 
 #### 2. **BDA Project Setup**
-- Creates a data automation project (`video-summarizer-custom-output-only-blueprints`)
+- Creates a data automation project 
 - Configures both standard and custom output configurations
-- Enables audio and image extraction capabilities
+- Enables video extraction capabilities
 - Associates the custom blueprint with the project
 
 #### 3. **Video Processing Pipeline**
@@ -127,7 +127,6 @@ The notebook includes cleanup procedures to remove uploaded files and generated 
 ## 📚 Related Files
 
 - `video/video_summarizer.json`: Custom blueprint schema for video processing
-- `console-video-blueprint.json`: Reference blueprint schema from AWS console
 - `utils/`: Helper functions for BDA operations and result processing
 
 ## 🚀 Getting Started
